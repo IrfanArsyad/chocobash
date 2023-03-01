@@ -2,10 +2,7 @@
 
 # Perbarui daftar paket dan instal dependensi
 sudo apt-get update
-sudo apt-get install -y software-properties-common
-sudo add-apt-repository -y ppa:ondrej/php
-sudo apt-get update
-sudo apt-get install -y php7.4-fpm php7.4-cli php7.4-mysql php7.4-curl php7.4-gd php7.4-mbstring php7.4-xml php7.4-xmlrpc php7.4-zip nginx
+sudo apt install nginx
 
 # Konfigurasikan Nginx
 sudo rm /etc/nginx/sites-enabled/default
@@ -38,6 +35,5 @@ EOF
 sudo chown -R www-data:www-data /var/www/html/
 sudo chmod -R 755 /var/www/html/
 
-# Restart PHP-FPM dan Nginx
-sudo systemctl restart php7.4-fpm
+# Restart Nginx
 sudo systemctl restart nginx
