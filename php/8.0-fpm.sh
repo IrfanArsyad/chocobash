@@ -9,4 +9,4 @@ sudo apt-get update
 sudo apt install php8.0 php8.0-cli php8.0-common php8.0-imap php8.0-redis php8.0-xml php8.0-zip php8.0-mbstring -y 
 
 # Restart PHP-FPM 
-sudo systemctl restart php7.4-fpm
+sudo systemctl restart php8.0-fpm
