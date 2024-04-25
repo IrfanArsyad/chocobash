@@ -1,8 +1,6 @@
 # chocobash
 
-To able to use bash on this project, please run command below 
-- replace { dir } 
-- replace file_name.sh 
+Copy and paste this script in your favorite terminal
 
-`` bash -c "$(wget -qLO - https://raw.githubusercontent.com/IrfanArsyad/chocobash/main/{dir}/file_name.sh)" ``
+`` bash -c "$(wget -qLO - https://raw.githubusercontent.com/IrfanArsyad/chocobash/main/main.sh)" ``
 
