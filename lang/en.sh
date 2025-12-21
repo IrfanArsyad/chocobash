@@ -1,0 +1,178 @@
+#!/bin/bash
+# English Language File - ChocoBash
+
+# Main Menu
+MSG_WELCOME="Welcome to ChocoBash!"
+MSG_SELECT_CATEGORY="Select installation category:"
+MSG_EXIT="Exit"
+MSG_ENTER_CHOICE="Enter your choice"
+MSG_INVALID_CHOICE="Invalid choice!"
+MSG_PRESS_ENTER="Press Enter to return to menu..."
+MSG_GOODBYE="Thank you for using ChocoBash!"
+MSG_SEE_YOU="See you again!"
+
+# Language Selection
+MSG_SELECT_LANG="Pilih Bahasa / Select Language:"
+MSG_LANG_ID="Bahasa Indonesia"
+MSG_LANG_EN="English"
+
+# Categories Description
+DESC_PHP="Install PHP (7.4 - 8.4)"
+DESC_WEBSERVER="Nginx, Apache2, Caddy"
+DESC_DATABASE="MySQL, MariaDB, PostgreSQL, Redis, MongoDB"
+DESC_DEVTOOLS="Git, Composer, Node.js, Yarn, NPM"
+DESC_CONTAINER="Docker, Docker Compose, Portainer"
+DESC_SECURITY="UFW Firewall, Fail2Ban, SSL/Certbot"
+DESC_MONITORING="htop, netdata, Grafana"
+DESC_UTILITIES="System Info, Cleanup, Update System"
+
+# Installer Menus
+MSG_BACK_MAIN="Back to Main Menu"
+MSG_SELECT_VERSION="Select version to install:"
+MSG_SELECT_INSTALL="Select to install:"
+
+# PHP Installer
+TITLE_PHP="PHP INSTALLER"
+MSG_SELECT_PHP="Select PHP version to install:"
+
+# Web Server Installer
+TITLE_WEBSERVER="WEB SERVER INSTALLER"
+MSG_SELECT_WEBSERVER="Select web server to install:"
+
+# Database Installer
+TITLE_DATABASE="DATABASE INSTALLER"
+MSG_SELECT_DATABASE="Select database to install:"
+CAT_SQL="SQL Database"
+CAT_NOSQL="NoSQL Database"
+
+# DevTools Installer
+TITLE_DEVTOOLS="DEV TOOLS INSTALLER"
+MSG_SELECT_DEVTOOLS="Select development tool to install:"
+CAT_VERSION_CONTROL="Version Control"
+CAT_PHP_TOOLS="PHP Tools"
+CAT_JAVASCRIPT="JavaScript Runtime & Package Managers"
+CAT_PYTHON="Python"
+
+# Container Installer
+TITLE_CONTAINER="CONTAINER INSTALLER"
+MSG_SELECT_CONTAINER="Select container tool to install:"
+CAT_DOCKER="Docker Ecosystem"
+CAT_ALTERNATIVES="Alternatives"
+CAT_ORCHESTRATION="Container Orchestration"
+
+# Security Installer
+TITLE_SECURITY="SECURITY TOOLS INSTALLER"
+MSG_SELECT_SECURITY="Select security tool to install:"
+CAT_FIREWALL="Firewall"
+CAT_INTRUSION="Intrusion Prevention"
+CAT_SSL="SSL/TLS Certificates"
+CAT_AUDIT="Security Audit"
+
+# Monitoring Installer
+TITLE_MONITORING="MONITORING TOOLS INSTALLER"
+MSG_SELECT_MONITORING="Select monitoring tool to install:"
+CAT_SYSTEM_MONITOR="System Monitoring"
+CAT_WEB_MONITOR="Web Monitoring"
+CAT_METRICS="Metrics & Visualization"
+CAT_LOGGING="Log Management"
+
+# Utilities Installer
+TITLE_UTILITIES="SYSTEM UTILITIES"
+MSG_SELECT_UTILITIES="Select utility to run:"
+CAT_SYSTEM_INFO="System Information"
+CAT_MAINTENANCE="System Maintenance"
+CAT_CONFIGURATION="System Configuration"
+
+# Installation Messages
+MSG_UPDATING="Updating package list..."
+MSG_INSTALLING="Installing"
+MSG_ENABLING="Enabling"
+MSG_CONFIGURING="Configuring"
+MSG_CREATING="Creating"
+MSG_SUCCESS="successfully installed!"
+MSG_START_INSTALL="Starting installation of"
+MSG_CLEANUP="Cleaning up"
+MSG_REMOVING="Removing"
+
+# Utility Messages
+MSG_CURRENT="Current:"
+MSG_ENTER_VALUE="Enter value:"
+MSG_ENTER_PATH="Enter path:"
+MSG_PERMISSION_FIXED="Permissions successfully fixed for:"
+MSG_DISK_AFTER="Disk usage after cleanup:"
+
+# Status Labels
+LBL_LEGACY="Legacy Support"
+LBL_EOL="End of Life"
+LBL_SECURITY="Security Support"
+LBL_STABLE="Stable"
+LBL_RECOMMENDED="Stable - Recommended"
+LBL_LATEST="Latest"
+LBL_POPULAR="Popular"
+LBL_ALTERNATIVE="Alternative"
+LBL_MODERN="Modern"
+LBL_ENTERPRISE="Enterprise"
+LBL_LIGHTWEIGHT="Lightweight"
+LBL_FAST="Fast"
+
+# System Info Labels
+LBL_OS_INFO="OS Information"
+LBL_HARDWARE="Hardware Information"
+LBL_DISK_INFO="Disk Information"
+LBL_NETWORK_INFO="Network Information"
+LBL_UPTIME="Uptime"
+LBL_HOSTNAME="Hostname:"
+LBL_OS="OS:"
+LBL_KERNEL="Kernel:"
+LBL_CPU="CPU:"
+LBL_TOTAL_RAM="Total RAM:"
+LBL_USED_RAM="Used RAM:"
+LBL_FREE_RAM="Free RAM:"
+LBL_IP_ADDRESS="IP Address:"
+LBL_PUBLIC_IP="Public IP:"
+
+# Cleanup Messages
+MSG_CLEAN_APT="Cleaning apt cache..."
+MSG_REMOVE_UNUSED="Removing unused packages..."
+MSG_CLEAN_KERNELS="Cleaning old kernels..."
+MSG_CLEAN_JOURNAL="Cleaning journal logs..."
+MSG_CLEAN_TEMP="Cleaning temporary files..."
+MSG_CLEAN_THUMB="Cleaning thumbnail cache..."
+MSG_CLEANUP_DONE="Cleanup complete!"
+
+# Update Messages
+MSG_UPGRADE_PACKAGES="Upgrading packages..."
+MSG_UPGRADE_DIST="Upgrading distribution..."
+MSG_UPDATE_DONE="Update complete!"
+
+# Swap Messages
+MSG_CURRENT_SWAP="Current swap:"
+MSG_ENTER_SWAP="Enter swap size (example: 2G, 4G, 8G)"
+MSG_CREATING_SWAP="Creating swap file..."
+MSG_SWAP_CREATED="Swap successfully created!"
+
+# Timezone Messages
+MSG_CURRENT_TZ="Current timezone:"
+MSG_SELECT_TZ="Select timezone:"
+MSG_TZ_SET="Timezone successfully set!"
+
+# Fix Permissions
+MSG_FIX_PERM="Fixing permissions for web directory..."
+MSG_ENTER_WEBDIR="Enter web directory path"
+
+# Essential Tools
+MSG_INSTALL_ESSENTIALS="Installing essential tools..."
+MSG_ESSENTIALS_DONE="Essential tools successfully installed!"
+
+# Docker specific
+MSG_DOCKER_NOTE="IMPORTANT: Logout and login again for docker group to take effect"
+MSG_DOCKER_ALT="Or run: newgrp docker"
+
+# MySQL specific
+MSG_MYSQL_SECURE="To secure MySQL installation, run:"
+
+# UFW specific
+MSG_UFW_CMDS="Useful commands:"
+MSG_UFW_ALLOW_HTTP="Allow HTTP"
+MSG_UFW_ALLOW_HTTPS="Allow HTTPS"
+MSG_UFW_ALLOW_SSH="Allow SSH"

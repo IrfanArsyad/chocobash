@@ -8,6 +8,9 @@
 # Base URL untuk remote scripts
 BASE_URL="https://raw.githubusercontent.com/IrfanArsyad/chocobash/main"
 
+# Config file for language
+LANG_CONFIG="$HOME/.chocobash_lang"
+
 # Warna
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -17,6 +20,64 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 WHITE='\033[1;37m'
 NC='\033[0m' # No Color
+
+# Load language file
+load_language() {
+    local lang_code="$1"
+    local lang_file="${BASE_URL}/lang/${lang_code}.sh"
+
+    # Download and source language file
+    eval "$(wget -qLO - ${lang_file})"
+}
+
+# Select language on first run or when requested
+select_language() {
+    clear
+    echo -e "${CYAN}"
+    echo "  ╔═══════════════════════════════════════════════════════════╗"
+    echo "  ║              LANGUAGE / BAHASA                            ║"
+    echo "  ╚═══════════════════════════════════════════════════════════╝"
+    echo -e "${NC}"
+    echo ""
+    echo -e "${YELLOW}  Pilih Bahasa / Select Language:${NC}"
+    echo ""
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo ""
+    echo -e "  ${GREEN}[1]${NC} ${WHITE}Bahasa Indonesia${NC}"
+    echo -e "  ${GREEN}[2]${NC} ${WHITE}English${NC}"
+    echo ""
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo ""
+    echo -ne "  ${CYAN}[1-2]: ${NC}"
+    read lang_choice
+
+    case $lang_choice in
+        1)
+            echo "id" > "$LANG_CONFIG"
+            CHOCO_LANG="id"
+            ;;
+        2)
+            echo "en" > "$LANG_CONFIG"
+            CHOCO_LANG="en"
+            ;;
+        *)
+            echo "id" > "$LANG_CONFIG"
+            CHOCO_LANG="id"
+            ;;
+    esac
+
+    load_language "$CHOCO_LANG"
+}
+
+# Check and load language
+init_language() {
+    if [ -f "$LANG_CONFIG" ]; then
+        CHOCO_LANG=$(cat "$LANG_CONFIG")
+        load_language "$CHOCO_LANG"
+    else
+        select_language
+    fi
+}
 
 # Fungsi untuk menampilkan banner
 show_banner() {
@@ -51,83 +112,90 @@ separator() {
 # Fungsi untuk menampilkan menu utama
 show_menu() {
     echo ""
-    echo -e "${WHITE}  Selamat Datang di ChocoBash!${NC}"
-    echo -e "${YELLOW}  Pilih kategori instalasi:${NC}"
+    echo -e "${WHITE}  ${MSG_WELCOME}${NC}"
+    echo -e "${YELLOW}  ${MSG_SELECT_CATEGORY}${NC}"
     echo ""
     separator
     echo ""
-    echo -e "  ${GREEN}[1]${NC} ${WHITE}PHP${NC}              - Install PHP (7.4 - 8.4)"
-    echo -e "  ${GREEN}[2]${NC} ${WHITE}Web Server${NC}       - Nginx, Apache2, Caddy"
-    echo -e "  ${GREEN}[3]${NC} ${WHITE}Database${NC}         - MySQL, MariaDB, PostgreSQL, Redis, MongoDB"
-    echo -e "  ${GREEN}[4]${NC} ${WHITE}Dev Tools${NC}        - Git, Composer, Node.js, Yarn, NPM"
-    echo -e "  ${GREEN}[5]${NC} ${WHITE}Container${NC}        - Docker, Docker Compose, Portainer"
-    echo -e "  ${GREEN}[6]${NC} ${WHITE}Security${NC}         - UFW Firewall, Fail2Ban, SSL/Certbot"
-    echo -e "  ${GREEN}[7]${NC} ${WHITE}Monitoring${NC}       - htop, netdata, Grafana"
-    echo -e "  ${GREEN}[8]${NC} ${WHITE}Utilities${NC}        - System Info, Cleanup, Update System"
+    echo -e "  ${GREEN}[1]${NC} ${WHITE}PHP${NC}              - ${DESC_PHP}"
+    echo -e "  ${GREEN}[2]${NC} ${WHITE}Web Server${NC}       - ${DESC_WEBSERVER}"
+    echo -e "  ${GREEN}[3]${NC} ${WHITE}Database${NC}         - ${DESC_DATABASE}"
+    echo -e "  ${GREEN}[4]${NC} ${WHITE}Dev Tools${NC}        - ${DESC_DEVTOOLS}"
+    echo -e "  ${GREEN}[5]${NC} ${WHITE}Container${NC}        - ${DESC_CONTAINER}"
+    echo -e "  ${GREEN}[6]${NC} ${WHITE}Security${NC}         - ${DESC_SECURITY}"
+    echo -e "  ${GREEN}[7]${NC} ${WHITE}Monitoring${NC}       - ${DESC_MONITORING}"
+    echo -e "  ${GREEN}[8]${NC} ${WHITE}Utilities${NC}        - ${DESC_UTILITIES}"
     echo ""
     separator
     echo ""
-    echo -e "  ${RED}[0]${NC} ${WHITE}Keluar${NC}"
+    echo -e "  ${PURPLE}[L]${NC} ${WHITE}Language${NC}         - Change Language / Ganti Bahasa"
+    echo -e "  ${RED}[0]${NC} ${WHITE}${MSG_EXIT}${NC}"
     echo ""
 }
 
 # Fungsi untuk konfirmasi
 confirm() {
     echo ""
-    echo -e "${YELLOW}Tekan Enter untuk kembali ke menu...${NC}"
+    echo -e "${YELLOW}${MSG_PRESS_ENTER}${NC}"
     read
 }
+
+# Initialize language
+init_language
 
 # Loop menu utama
 while true; do
     show_banner
     show_menu
 
-    echo -ne "  ${CYAN}Masukkan pilihan [0-8]: ${NC}"
+    echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-8/L]: ${NC}"
     read pilihan
 
     case $pilihan in
         1)
-            bash -c "$(wget -qLO - ${BASE_URL}/php/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/php/installer.sh)"
             confirm
             ;;
         2)
-            bash -c "$(wget -qLO - ${BASE_URL}/webserver/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/webserver/installer.sh)"
             confirm
             ;;
         3)
-            bash -c "$(wget -qLO - ${BASE_URL}/database/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/database/installer.sh)"
             confirm
             ;;
         4)
-            bash -c "$(wget -qLO - ${BASE_URL}/devtools/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/devtools/installer.sh)"
             confirm
             ;;
         5)
-            bash -c "$(wget -qLO - ${BASE_URL}/container/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/container/installer.sh)"
             confirm
             ;;
         6)
-            bash -c "$(wget -qLO - ${BASE_URL}/security/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/security/installer.sh)"
             confirm
             ;;
         7)
-            bash -c "$(wget -qLO - ${BASE_URL}/monitoring/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/monitoring/installer.sh)"
             confirm
             ;;
         8)
-            bash -c "$(wget -qLO - ${BASE_URL}/utilities/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/utilities/installer.sh)"
             confirm
+            ;;
+        l|L)
+            select_language
             ;;
         0)
             echo ""
-            echo -e "  ${GREEN}Terima kasih telah menggunakan ChocoBash!${NC}"
-            echo -e "  ${CYAN}Sampai jumpa lagi!${NC}"
+            echo -e "  ${GREEN}${MSG_GOODBYE}${NC}"
+            echo -e "  ${CYAN}${MSG_SEE_YOU}${NC}"
             echo ""
             exit 0
             ;;
         *)
-            echo -e "  ${RED}Pilihan tidak valid! Silahkan pilih 0-8.${NC}"
+            echo -e "  ${RED}${MSG_INVALID_CHOICE}${NC}"
             sleep 2
             ;;
     esac

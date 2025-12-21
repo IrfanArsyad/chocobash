@@ -1,16 +1,20 @@
 #!/bin/bash
 
-echo "[*] Mengupdate package list..."
+BASE_URL="https://raw.githubusercontent.com/IrfanArsyad/chocobash/main"
+CHOCO_LANG="${CHOCO_LANG:-id}"
+eval "$(wget -qLO - ${BASE_URL}/lang/${CHOCO_LANG}.sh)"
+
+echo "[*] ${MSG_UPDATING}"
 sudo apt-get update
 
-echo "[*] Mengupgrade packages..."
+echo "[*] ${MSG_UPGRADE_PACKAGES}"
 sudo apt-get upgrade -y
 
-echo "[*] Mengupgrade distribusi..."
+echo "[*] ${MSG_UPGRADE_DIST}"
 sudo apt-get dist-upgrade -y
 
-echo "[*] Membersihkan package yang tidak diperlukan..."
+echo "[*] ${MSG_REMOVE_UNUSED}"
 sudo apt-get autoremove -y
 sudo apt-get autoclean
 
-echo "[✓] System berhasil diupdate!"
+echo "[✓] ${MSG_UPDATE_DONE}"
