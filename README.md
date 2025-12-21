@@ -1,6 +1,8 @@
 # ChocoBash
 
-Linux Server Installer & Manager - Script bash interaktif untuk menginstall dan mengkonfigurasi berbagai tools di server Linux (Ubuntu/Debian).
+Linux Server Installer & Manager - Interactive bash script for installing and configuring various tools on Linux servers (Ubuntu/Debian).
+
+Script bash interaktif untuk menginstall dan mengkonfigurasi berbagai tools di server Linux (Ubuntu/Debian).
 
 ## Quick Start
 
@@ -8,13 +10,21 @@ Linux Server Installer & Manager - Script bash interaktif untuk menginstall dan 
 bash -c "$(wget -qLO - https://raw.githubusercontent.com/IrfanArsyad/chocobash/main/main.sh)"
 ```
 
-atau
+atau / or
 
 ```bash
 git clone https://github.com/IrfanArsyad/chocobash.git
 cd chocobash
 bash main.sh
 ```
+
+## Language Support
+
+ChocoBash supports **English** and **Bahasa Indonesia**.
+
+- On first run, you will be prompted to select your language
+- Press `[L]` in the main menu to change language anytime
+- Language preference is saved in `~/.chocobash_lang`
 
 ## Features
 
@@ -92,13 +102,16 @@ bash main.sh
 
 - Ubuntu 20.04+ / Debian 10+
 - sudo access
-- wget atau curl
+- wget or curl
 
 ## Structure
 
 ```
 chocobash/
 ├── main.sh                 # Main menu
+├── lang/                   # Language files
+│   ├── en.sh              # English
+│   └── id.sh              # Bahasa Indonesia
 ├── php/                    # PHP installers
 ├── webserver/              # Web server installers
 ├── database/               # Database installers
