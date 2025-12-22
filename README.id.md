@@ -2,17 +2,17 @@
 
 Linux Server Installer & Manager
 
-[![Bahasa Indonesia](https://img.shields.io/badge/Bahasa-Indonesia-red)](README.id.md)
+[![English](https://img.shields.io/badge/Language-English-blue)](README.md)
 
-Interactive bash script for installing and configuring various tools on Linux servers (Ubuntu/Debian).
+Script bash interaktif untuk menginstall dan mengkonfigurasi berbagai tools di server Linux (Ubuntu/Debian).
 
-## Quick Start
+## Cara Pakai
 
 ```bash
 bash -c "$(wget -qLO - https://raw.githubusercontent.com/IrfanArsyad/chocobash/main/main.sh)"
 ```
 
-or
+atau
 
 ```bash
 git clone https://github.com/IrfanArsyad/chocobash.git
@@ -20,15 +20,15 @@ cd chocobash
 bash main.sh
 ```
 
-## Language Support
+## Dukungan Bahasa
 
-ChocoBash supports **English** and **Bahasa Indonesia**.
+ChocoBash mendukung **English** dan **Bahasa Indonesia**.
 
-- On first run, you will be prompted to select your language
-- Press `[L]` in the main menu to change language anytime
-- Language preference is saved in `~/.chocobash_lang`
+- Saat pertama kali dijalankan, kamu akan diminta memilih bahasa
+- Tekan `[L]` di menu utama untuk mengganti bahasa kapanpun
+- Preferensi bahasa disimpan di `~/.chocobash_lang`
 
-## Features
+## Fitur
 
 ### 1. PHP Installer
 - PHP 7.4 FPM (Legacy Support)
@@ -39,8 +39,8 @@ ChocoBash supports **English** and **Bahasa Indonesia**.
 - PHP 8.4 FPM (Latest)
 
 ### 2. Web Server
-- Nginx (High Performance)
-- Apache2 (Classic & Flexible)
+- Nginx (Performa Tinggi)
+- Apache2 (Klasik & Fleksibel)
 - Caddy (Auto HTTPS)
 - OpenLiteSpeed
 
@@ -78,7 +78,7 @@ ChocoBash supports **English** and **Bahasa Indonesia**.
 - CrowdSec
 - Certbot (Let's Encrypt)
 - acme.sh
-- Lynis (Security Audit)
+- Lynis (Audit Keamanan)
 - ClamAV
 
 ### 7. Monitoring
@@ -90,33 +90,33 @@ ChocoBash supports **English** and **Bahasa Indonesia**.
 - Loki
 
 ### 8. Utilities
-- System Info
-- Disk Usage
-- Network Info
-- Update System
+- Informasi Sistem
+- Penggunaan Disk
+- Informasi Jaringan
+- Update Sistem
 - Cleanup
-- Fix Permissions
+- Perbaiki Permissions
 - Essential Tools
-- Create Swap
-- Set Timezone
+- Buat Swap
+- Atur Timezone
 
-## Requirements
+## Persyaratan
 
 - Ubuntu 20.04+ / Debian 10+
-- sudo access
-- wget or curl
+- Akses sudo
+- wget atau curl
 
-## Structure
+## Struktur
 
 ```
 chocobash/
-├── main.sh                 # Main menu
-├── lang/                   # Language files
+├── main.sh                 # Menu utama
+├── lang/                   # File bahasa
 │   ├── en.sh              # English
 │   └── id.sh              # Bahasa Indonesia
-├── php/                    # PHP installers
-├── webserver/              # Web server installers
-├── database/               # Database installers
+├── php/                    # Installer PHP
+├── webserver/              # Installer web server
+├── database/               # Installer database
 ├── devtools/               # Development tools
 ├── container/              # Container tools
 ├── security/               # Security tools
