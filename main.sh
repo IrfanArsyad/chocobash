@@ -26,8 +26,8 @@ load_language() {
     local lang_code="$1"
     local lang_file="${BASE_URL}/lang/${lang_code}.sh"
 
-    # Download and source language file
-    eval "$(wget -qLO - ${lang_file})"
+    # Download and source language file (remove CRLF if present)
+    eval "$(wget -qLO - ${lang_file} | tr -d '\r')"
 }
 
 # Select language on first run or when requested
@@ -153,35 +153,35 @@ while true; do
 
     case $pilihan in
         1)
-            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/php/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/php/installer.sh | tr -d '\r')"
             confirm
             ;;
         2)
-            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/webserver/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/webserver/installer.sh | tr -d '\r')"
             confirm
             ;;
         3)
-            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/database/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/database/installer.sh | tr -d '\r')"
             confirm
             ;;
         4)
-            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/devtools/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/devtools/installer.sh | tr -d '\r')"
             confirm
             ;;
         5)
-            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/container/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/container/installer.sh | tr -d '\r')"
             confirm
             ;;
         6)
-            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/security/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/security/installer.sh | tr -d '\r')"
             confirm
             ;;
         7)
-            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/monitoring/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/monitoring/installer.sh | tr -d '\r')"
             confirm
             ;;
         8)
-            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/utilities/installer.sh)"
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/utilities/installer.sh | tr -d '\r')"
             confirm
             ;;
         l|L)
