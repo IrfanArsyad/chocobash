@@ -3,8 +3,42 @@
 Linux Server Installer & Manager
 
 [![English](https://img.shields.io/badge/Language-English-blue)](README.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Shell Script](https://img.shields.io/badge/Shell-Bash-green.svg)](https://www.gnu.org/software/bash/)
 
-Script bash interaktif untuk menginstall dan mengkonfigurasi berbagai tools di server Linux (Ubuntu/Debian).
+Script bash interaktif untuk menginstall dan mengkonfigurasi berbagai tools di server Linux. Permudah setup server dengan menu yang mudah digunakan.
+
+## Kompatibilitas
+
+### Sistem Operasi yang Didukung
+
+| OS | Versi | Status |
+|----|-------|--------|
+| Ubuntu | 20.04 LTS (Focal) | Fully Supported |
+| Ubuntu | 22.04 LTS (Jammy) | Fully Supported |
+| Ubuntu | 24.04 LTS (Noble) | Fully Supported |
+| Debian | 10 (Buster) | Supported |
+| Debian | 11 (Bullseye) | Fully Supported |
+| Debian | 12 (Bookworm) | Fully Supported |
+
+### Arsitektur yang Didukung
+
+| Arsitektur | Status |
+|------------|--------|
+| x86_64 (AMD64) | Fully Supported |
+| ARM64 (aarch64) | Supported |
+| ARMv7 (armhf) | Partial Support |
+
+### Di Mana ChocoBash Bisa Dijalankan
+
+| Platform | Contoh | Kompatibilitas |
+|----------|--------|----------------|
+| **Cloud VPS** | DigitalOcean, Linode, Vultr, AWS EC2, Google Cloud, Azure | Excellent |
+| **Dedicated Server** | OVH, Hetzner, Contabo | Excellent |
+| **Home Server / Homelab** | Raspberry Pi 4+, Intel NUC, Mini PC | Excellent |
+| **Virtual Machine** | VirtualBox, VMware, Proxmox, Hyper-V | Excellent |
+| **Container** | LXC/LXD, Docker (dengan systemd) | Good |
+| **WSL2** | Windows Subsystem for Linux 2 | Good (systemd terbatas) |
 
 ## Cara Pakai
 
@@ -40,6 +74,9 @@ ChocoBash mendukung **English** dan **Bahasa Indonesia**.
 
 ### 2. Web Server
 - Nginx (Performa Tinggi)
+  - Mode Production (dengan domain)
+  - Mode Self-hosted (IP:port, tanpa domain)
+  - Integrasi PHP-FPM otomatis
 - Apache2 (Klasik & Fleksibel)
 - Caddy (Auto HTTPS)
 - OpenLiteSpeed
@@ -102,9 +139,16 @@ ChocoBash mendukung **English** dan **Bahasa Indonesia**.
 
 ## Persyaratan
 
-- Ubuntu 20.04+ / Debian 10+
-- Akses sudo
-- wget atau curl
+- **OS**: Ubuntu 20.04+ / Debian 10+ (lihat tabel kompatibilitas di atas)
+- **Akses**: Root atau sudo privileges
+- **Network**: wget atau curl untuk instalasi remote
+- **RAM**: Minimum 512MB (1GB+ direkomendasikan)
+- **Disk**: Minimum 1GB ruang kosong
+
+### Persyaratan Opsional
+
+- `systemd` untuk manajemen service (sebagian besar fitur memerlukan ini)
+- Koneksi internet untuk instalasi package
 
 ## Struktur
 
