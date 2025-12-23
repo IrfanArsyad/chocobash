@@ -32,11 +32,17 @@ echo -e "  ${GREEN}[3]${NC} Caddy          ${YELLOW}(Auto HTTPS & Modern)${NC}"
 echo -e "  ${GREEN}[4]${NC} OpenLiteSpeed  ${YELLOW}(High Performance Alternative)${NC}"
 echo ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${WHITE}  Configuration Tools${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
+echo -e "  ${GREEN}[5]${NC} Nginx Config   ${YELLOW}(Virtual Host + PHP-FPM Setup)${NC}"
+echo ""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 echo -e "  ${RED}[0]${NC} ${MSG_BACK_MAIN}"
 echo ""
 
-echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-4]: ${NC}"
+echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-5]: ${NC}"
 read pilihan
 
 case $pilihan in
@@ -55,6 +61,10 @@ case $pilihan in
     4)
         echo -e "\n${GREEN}[*] ${MSG_START_INSTALL} OpenLiteSpeed...${NC}\n"
         CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/webserver/openlitespeed.sh)"
+        ;;
+    5)
+        echo -e "\n${GREEN}[*] Nginx Virtual Host Manager...${NC}\n"
+        CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/webserver/nginx-config.sh)"
         ;;
     0)
         exit 0
