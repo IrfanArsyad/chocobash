@@ -36,12 +36,15 @@ echo -e "  ${GREEN}[4]${NC} MongoDB         ${YELLOW}(Document Database)${NC}"
 echo -e "  ${GREEN}[5]${NC} Redis           ${YELLOW}(In-Memory Cache & DB)${NC}"
 echo -e "  ${GREEN}[6]${NC} Memcached       ${YELLOW}(High-Performance Cache)${NC}"
 echo ""
+echo -e "  ${WHITE}${CAT_DB_TOOLS}:${NC}"
+echo -e "  ${GREEN}[7]${NC} ${MSG_PGSQL_SETUP}  ${YELLOW}(${DESC_PGSQL_SETUP})${NC}"
+echo ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 echo -e "  ${RED}[0]${NC} ${MSG_BACK_MAIN}"
 echo ""
 
-echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-6]: ${NC}"
+echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-7]: ${NC}"
 read pilihan
 
 case $pilihan in
@@ -68,6 +71,9 @@ case $pilihan in
     6)
         echo -e "\n${GREEN}[*] ${MSG_START_INSTALL} Memcached...${NC}\n"
         CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/database/memcached.sh)"
+        ;;
+    7)
+        CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/database/postgresql_setup.sh | tr -d '\r')"
         ;;
     0)
         exit 0
