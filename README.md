@@ -5,6 +5,7 @@ Linux Server Installer & Manager
 [![Bahasa Indonesia](https://img.shields.io/badge/Bahasa-Indonesia-red)](README.id.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Shell Script](https://img.shields.io/badge/Shell-Bash-green.svg)](https://www.gnu.org/software/bash/)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support-orange)](https://buymeacoffee.com/herostack)
 
 Interactive bash script for installing and configuring various tools on Linux servers. Simplify your server setup with an easy-to-use menu-driven interface.
 
