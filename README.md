@@ -138,6 +138,19 @@ ChocoBash supports **English** and **Bahasa Indonesia**.
 - Create Swap
 - Set Timezone
 
+### 9. User Management
+- Create New User
+  - Set password or SSH key only
+  - Grant sudo access
+  - Setup SSH key
+- List All Users
+- Delete User
+- Modify User (add/remove sudo access)
+
+### 10. Uninstall
+- Interactive uninstall
+- View installed applications
+
 ## Requirements
 
 - **OS**: Ubuntu 20.04+ / Debian 10+ (see compatibility table above)
@@ -166,7 +179,9 @@ chocobash/
 ├── container/              # Container tools
 ├── security/               # Security tools
 ├── monitoring/             # Monitoring tools
-└── utilities/              # System utilities
+├── utilities/              # System utilities
+├── usermanagement/         # User management tools
+└── uninstall/              # Uninstall tools
 ```
 
 ## Author
