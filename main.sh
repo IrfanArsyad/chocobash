@@ -125,6 +125,8 @@ show_menu() {
     echo -e "  ${GREEN}[6]${NC} ${WHITE}Security${NC}         - ${DESC_SECURITY}"
     echo -e "  ${GREEN}[7]${NC} ${WHITE}Monitoring${NC}       - ${DESC_MONITORING}"
     echo -e "  ${GREEN}[8]${NC} ${WHITE}Utilities${NC}        - ${DESC_UTILITIES}"
+    echo -e "  ${GREEN}[9]${NC} ${WHITE}User Management${NC}  - ${DESC_USERMANAGEMENT}"
+    echo -e "  ${GREEN}[10]${NC} ${WHITE}Uninstall${NC}       - ${DESC_UNINSTALL}"
     echo ""
     separator
     echo ""
@@ -148,7 +150,7 @@ while true; do
     show_banner
     show_menu
 
-    echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-8/L]: ${NC}"
+    echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-10/L]: ${NC}"
     read pilihan
 
     case $pilihan in
@@ -182,6 +184,14 @@ while true; do
             ;;
         8)
             CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/utilities/installer.sh | tr -d '\r')"
+            confirm
+            ;;
+        9)
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/usermanagement/installer.sh | tr -d '\r')"
+            confirm
+            ;;
+        10)
+            CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/uninstall/installer.sh | tr -d '\r')"
             confirm
             ;;
         l|L)
