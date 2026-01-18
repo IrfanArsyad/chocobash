@@ -83,6 +83,9 @@ MSG_SELECT_UTILITIES="Select utility to run:"
 CAT_SYSTEM_INFO="System Information"
 CAT_MAINTENANCE="System Maintenance"
 CAT_CONFIGURATION="System Configuration"
+DESC_DISKANALYSIS="Comprehensive Disk Analysis - Find largest files & folders"
+DESC_SMARTCLEANUP="Smart Cleanup - Delete files with interactive confirmation"
+MSG_ANALYZING="Analyzing"
 
 # Installation Messages
 MSG_UPDATING="Updating package list..."

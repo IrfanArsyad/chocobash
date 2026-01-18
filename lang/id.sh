@@ -84,6 +84,9 @@ MSG_SELECT_UTILITIES="Pilih utility yang ingin dijalankan:"
 CAT_SYSTEM_INFO="System Information"
 CAT_MAINTENANCE="System Maintenance"
 CAT_CONFIGURATION="System Configuration"
+DESC_DISKANALYSIS="Analisis Disk Komprehensif - Cari file & folder terbesar"
+DESC_SMARTCLEANUP="Smart Cleanup - Hapus file dengan konfirmasi interaktif"
+MSG_ANALYZING="Menganalisis"
 
 # Installation Messages
 MSG_UPDATING="Mengupdate package list..."

@@ -76,12 +76,16 @@ echo -e "  ${GREEN}[7]${NC} Install Essentials  ${YELLOW}(${DESC_ESSENTIALS})${N
 echo -e "  ${GREEN}[8]${NC} Create Swap         ${YELLOW}(${DESC_SWAP})${NC}"
 echo -e "  ${GREEN}[9]${NC} Set Timezone        ${YELLOW}(${DESC_TIMEZONE})${NC}"
 echo ""
+echo -e "  ${WHITE}Analysis Tools:${NC}"
+echo -e "  ${GREEN}[10]${NC} Disk Analysis      ${YELLOW}(${DESC_DISKANALYSIS})${NC}"
+echo -e "  ${GREEN}[11]${NC} Smart Cleanup      ${YELLOW}(${DESC_SMARTCLEANUP})${NC}"
+echo ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 echo -e "  ${RED}[0]${NC} ${MSG_BACK_MAIN}"
 echo ""
 
-echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-9]: ${NC}"
+echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-11]: ${NC}"
 read pilihan
 
 case $pilihan in
@@ -120,6 +124,14 @@ case $pilihan in
     9)
         echo -e "\n${GREEN}[*] ${MSG_SETTING} Timezone...${NC}\n"
         CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/utilities/timezone.sh)"
+        ;;
+    10)
+        echo -e "\n${GREEN}[*] ${MSG_ANALYZING} Disk...${NC}\n"
+        CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/utilities/diskanalysis.sh)"
+        ;;
+    11)
+        echo -e "\n${GREEN}[*] ${MSG_STARTING} Smart Cleanup...${NC}\n"
+        CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/utilities/smart-cleanup.sh)"
         ;;
     0)
         exit 0
