@@ -81,14 +81,15 @@ echo -e "  ${GREEN}[10]${NC} Disk Analysis      ${YELLOW}(${DESC_DISKANALYSIS})$
 echo -e "  ${GREEN}[11]${NC} Smart Cleanup      ${YELLOW}(${DESC_SMARTCLEANUP})${NC}"
 echo ""
 echo -e "  ${WHITE}Network Tools:${NC}"
-echo -e "  ${GREEN}[12]${NC} Latency Check      ${YELLOW}(${DESC_LATENCY})${NC}"
+echo -e "  ${GREEN}[12]${NC} Latency Check            ${YELLOW}(${DESC_LATENCY})${NC}"
+echo -e "  ${GREEN}[13]${NC} DB Connection Test       ${YELLOW}(Test koneksi database cross-country)${NC}"
 echo ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 echo -e "  ${RED}[0]${NC} ${MSG_BACK_MAIN}"
 echo ""
 
-echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-12]: ${NC}"
+echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-13]: ${NC}"
 read pilihan
 
 case $pilihan in
@@ -139,6 +140,10 @@ case $pilihan in
     12)
         echo -e "\n${GREEN}[*] ${MSG_STARTING} Latency Check...${NC}\n"
         CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/utilities/latency-check.sh)"
+        ;;
+    13)
+        echo -e "\n${GREEN}[*] ${MSG_STARTING} Database Connection Test...${NC}\n"
+        CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/utilities/db-connection-test.sh)"
         ;;
     0)
         exit 0
