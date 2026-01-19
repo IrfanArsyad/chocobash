@@ -80,12 +80,15 @@ echo -e "  ${WHITE}Analysis Tools:${NC}"
 echo -e "  ${GREEN}[10]${NC} Disk Analysis      ${YELLOW}(${DESC_DISKANALYSIS})${NC}"
 echo -e "  ${GREEN}[11]${NC} Smart Cleanup      ${YELLOW}(${DESC_SMARTCLEANUP})${NC}"
 echo ""
+echo -e "  ${WHITE}Network Tools:${NC}"
+echo -e "  ${GREEN}[12]${NC} Latency Check      ${YELLOW}(${DESC_LATENCY})${NC}"
+echo ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 echo -e "  ${RED}[0]${NC} ${MSG_BACK_MAIN}"
 echo ""
 
-echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-11]: ${NC}"
+echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-12]: ${NC}"
 read pilihan
 
 case $pilihan in
@@ -132,6 +135,10 @@ case $pilihan in
     11)
         echo -e "\n${GREEN}[*] ${MSG_STARTING} Smart Cleanup...${NC}\n"
         CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/utilities/smart-cleanup.sh)"
+        ;;
+    12)
+        echo -e "\n${GREEN}[*] ${MSG_STARTING} Latency Check...${NC}\n"
+        CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/utilities/latency-check.sh)"
         ;;
     0)
         exit 0
