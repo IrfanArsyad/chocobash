@@ -36,19 +36,20 @@ echo ""
 echo -e "  ${WHITE}${CAT_JAVASCRIPT}:${NC}"
 echo -e "  ${GREEN}[4]${NC} Node.js LTS     ${YELLOW}(JavaScript Runtime)${NC}"
 echo -e "  ${GREEN}[5]${NC} Node.js Latest  ${YELLOW}(${LBL_LATEST})${NC}"
-echo -e "  ${GREEN}[6]${NC} Yarn            ${YELLOW}(Package Manager)${NC}"
-echo -e "  ${GREEN}[7]${NC} PNPM            ${YELLOW}(${LBL_FAST} Package Manager)${NC}"
-echo -e "  ${GREEN}[8]${NC} Bun             ${YELLOW}(${LBL_FAST} JS Runtime & Toolkit)${NC}"
+echo -e "  ${GREEN}[6]${NC} NVM             ${YELLOW}(Node Version Manager)${NC}"
+echo -e "  ${GREEN}[7]${NC} Yarn            ${YELLOW}(Package Manager)${NC}"
+echo -e "  ${GREEN}[8]${NC} PNPM            ${YELLOW}(${LBL_FAST} Package Manager)${NC}"
+echo -e "  ${GREEN}[9]${NC} Bun             ${YELLOW}(${LBL_FAST} JS Runtime & Toolkit)${NC}"
 echo ""
 echo -e "  ${WHITE}${CAT_PYTHON}:${NC}"
-echo -e "  ${GREEN}[9]${NC} Python 3 + Pip  ${YELLOW}(Python Environment)${NC}"
+echo -e "  ${GREEN}[10]${NC} Python 3 + Pip  ${YELLOW}(Python Environment)${NC}"
 echo ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 echo -e "  ${RED}[0]${NC} ${MSG_BACK_MAIN}"
 echo ""
 
-echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-9]: ${NC}"
+echo -ne "  ${CYAN}${MSG_ENTER_CHOICE} [0-10]: ${NC}"
 read pilihan
 
 case $pilihan in
@@ -73,18 +74,22 @@ case $pilihan in
         CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/devtools/nodejs-latest.sh)"
         ;;
     6)
+        echo -e "\n${GREEN}[*] ${MSG_START_INSTALL} NVM...${NC}\n"
+        CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/devtools/nvm.sh)"
+        ;;
+    7)
         echo -e "\n${GREEN}[*] ${MSG_START_INSTALL} Yarn...${NC}\n"
         CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/devtools/yarn.sh)"
         ;;
-    7)
+    8)
         echo -e "\n${GREEN}[*] ${MSG_START_INSTALL} PNPM...${NC}\n"
         CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/devtools/pnpm.sh)"
         ;;
-    8)
+    9)
         echo -e "\n${GREEN}[*] ${MSG_START_INSTALL} Bun...${NC}\n"
         CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/devtools/bun.sh)"
         ;;
-    9)
+    10)
         echo -e "\n${GREEN}[*] ${MSG_START_INSTALL} Python 3...${NC}\n"
         CHOCO_LANG="$CHOCO_LANG" bash -c "$(wget -qLO - ${BASE_URL}/devtools/python.sh)"
         ;;

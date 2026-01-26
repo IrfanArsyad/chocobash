@@ -98,6 +98,7 @@ ChocoBash mendukung **English** dan **Bahasa Indonesia**.
 - Composer (PHP)
 - Laravel Installer
 - Node.js (LTS & Latest)
+- NVM (Node Version Manager)
 - Yarn, PNPM, Bun
 - Python 3 + Pip
 
